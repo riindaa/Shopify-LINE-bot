@@ -56,7 +56,7 @@ LINE_CHANNEL_ACCESS_TOKEN=YOUR_LINE_CHANNEL_ACCESS_TOKEN
 ## ▶️ Running the Server
 
 ```bash
-npm dev
+npm run dev
 ```
 
 Visit: http://localhost:4000
