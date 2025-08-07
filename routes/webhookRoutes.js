@@ -1,12 +1,12 @@
-const express = require('express');
+import express from 'express';
+import {
+  handleOrderCreationWebhook,
+  lineWebhook,
+} from '../controllers/webhookController.js';
+
 const router = express.Router();
-const webhookController = require('../controllers/webhookController');
 
-router.post(
-  '/webhook/order-creation',
-  webhookController.handleOrderCreationWebhook
-);
+router.post('/webhook/order-creation', handleOrderCreationWebhook);
+router.post('/webhook/line', lineWebhook);
 
-router.post('/webhook/line', webhookController.lineWebhook);
-
-module.exports = router;
+export default router;

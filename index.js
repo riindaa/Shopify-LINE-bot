@@ -1,6 +1,8 @@
-require('dotenv').config();
-const express = require('express');
-const webhookRoutes = require('./routes/webhookRoutes');
+import dotenv from 'dotenv';
+import express from 'express';
+import webhookRoutes from './routes/webhookRoutes.js';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;

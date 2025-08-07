@@ -1,8 +1,8 @@
-const axios = require('axios');
+import axios from 'axios';
 
-exports.sendMessage = async (text) => {
-  const LINE_API = 'https://api.line.me/v2/bot/message/push';
+const LINE_API = 'https://api.line.me/v2/bot/message/push';
 
+export const sendMessage = async (text) => {
   try {
     await axios.post(
       LINE_API,
@@ -17,7 +17,7 @@ exports.sendMessage = async (text) => {
         },
       }
     );
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error('LINE API error:', error.message);
   }
 };
